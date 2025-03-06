@@ -4,6 +4,7 @@ const port = 5000;
 
 // in built middleware
 app.use(express.json())
+const route = require("./routes/route")
 
 // const loggingMiddleware = (req, res, next)=>{
 // console.log("log korchi");
@@ -25,6 +26,8 @@ app.use(express.json())
 // app.use(loggingMiddleware);
 // app.use(authMiddleware);
 // app.use(validationMiddleware);
+
+app.use("/api", route)
 
 app.get("/", (req, res)=>{
     console.log(req.body)
